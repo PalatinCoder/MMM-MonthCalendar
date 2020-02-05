@@ -34,6 +34,8 @@ Module.register("MMM-MonthCalendar", {
         ]
     },
 
+    getScripts: function() { return ["moment.js"] },
+
     getTemplate: function() {
         return `${this.name}.njk`;
     },
