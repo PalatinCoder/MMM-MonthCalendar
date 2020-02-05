@@ -41,7 +41,8 @@ Module.register("MMM-MonthCalendar", {
     getTemplateData: function() {
         return {
             weekdays: this.weekdays,
-            days: this.getCalendarDays()
+            days: this.getCalendarDays(),
+            today: moment().date()
         }
     },
 

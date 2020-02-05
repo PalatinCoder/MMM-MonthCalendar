@@ -5,6 +5,6 @@
 </div>
 <div class="calendar-days xsmall">
     {%for day in days %}
-    <div>{{ day }}</div>
+    <div {{ "today" if day == today}}>{{ day }}</div>
     {% endfor %}
 </div>

@@ -4,6 +4,13 @@
     grid-template-columns: repeat(7, 1fr);
 }
 
+.module.MMM-MonthCalendar .calendar-days [today] {
+    color: #000;
+    background-color: #ccc;
+    border-radius: 5%;
+    font-weight: 600;
+}
+
 .module.MMM-MonthCalendar .calendar-daysinweek div,
 .module.MMM-MonthCalendar .calendar-days div {
     padding: 4px 0;
