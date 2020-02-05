@@ -6,6 +6,7 @@ Module.register("MMM-MonthCalendar", {
 
     weekdays: [],
     start: function() {
+        moment.locale(config.language);
         this.weekdays = [0,1,2,3,4,5,6].map(d => moment().weekday(d).format("ddd"));
         this.scheduleUpdate();
     },
