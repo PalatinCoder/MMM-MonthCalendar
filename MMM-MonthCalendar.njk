@@ -1,9 +1,10 @@
-<table class="xsmall">
-    <thead>
-        <tr>
-            {% for day in weekdays %}
-            <th>{{ day }}</th>
-            {% endfor %}
-        </tr>
-    </thead>
-</table>
+<div class="calendar-daysinweek xsmall bright">
+    {%for day in weekdays %}
+    <div>{{ day }}</div>
+    {% endfor %}
+</div>
+<div class="calendar-days xsmall">
+    {%for day in days %}
+    <div>{{ day }}</div>
+    {% endfor %}
+</div>
