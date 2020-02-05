@@ -15,3 +15,5 @@
 .module.MMM-MonthCalendar .calendar-days div {
     padding: 4px 0;
 }
+
+.module.MMM-MonthCalendar .module-content { text-align: center; }
