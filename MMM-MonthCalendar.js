@@ -1,7 +1,8 @@
 Module.register("MMM-MonthCalendar", {
 
     defaults: {
-        updateDelay: 5
+        updateDelay: 5,
+        showAdjacentMonths: true
     },
 
     weekdays: [],
@@ -44,22 +45,53 @@ Module.register("MMM-MonthCalendar", {
     getTemplateData: function() {
         return {
             weekdays: this.weekdays,
+            prefill: this.getPrefill(),
+            postfill: this.getPostfill(),
             days: this.getCalendarDays(),
             today: moment().date()
         }
     },
 
+    getPrefill: function() {
+        /** Fills up the first calendar row with days of the previous month, 
+         * when the config.showAdjacentMonths param is set to true. 
+         * Otherwise it fills with empty space. */
+        let days = [];
+        let lastMonthDayCount = moment().startOf('month').subtract(1, 'day').date();
+        // The weekday int is equal the amount of days we need to fill before
+        let fillBefore = moment().startOf('month').weekday();
+        let fillStart = (lastMonthDayCount + 1) - fillBefore;
+
+        if (!this.config.showAdjacentMonths) return Array(fillBefore).fill("");
+
+        for (let preDay = fillStart; preDay <= lastMonthDayCount; preDay++) {
+            days.push(preDay);
+        }
+        return days;
+    },
+
+    getPostfill: function() {
+        /** Fills up the last calendar row with days of the next month, 
+         * when the config.showAdjacentMonths param is set to true. 
+         * Otherwise it fills with empty space. */
+        let days = [];
+        if (!this.config.showAdjacentMonths) return days;
+
+        let lastDay = moment().endOf('month').weekday()
+        let fillAfter = 7 - lastDay;
+
+        for (let postDay = 1; postDay < fillAfter; postDay++) {
+                days.push(postDay);
+        }
+        return days;
+    },
+
     getCalendarDays: function() {
         let days = [];
-        let FillBefore = moment().startOf('month').weekday();
-        for (let i = 0; i < FillBefore; i++) {
-            days.push('');
-        }
+
         for (let day = 1; day <= moment().daysInMonth(); day++) {
             days.push(day);
         }
-        Log.info(days);
         return days;
     }
-
 });

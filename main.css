@@ -11,6 +11,11 @@
     font-weight: 600;
 }
 
+.module.MMM-MonthCalendar .prefill,
+.module.MMM-MonthCalendar .postfill {
+    color: #444444;
+}
+
 .module.MMM-MonthCalendar .calendar-daysinweek div,
 .module.MMM-MonthCalendar .calendar-days div {
     padding: 4px 0;
