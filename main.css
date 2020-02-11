@@ -19,6 +19,7 @@
 .module.MMM-MonthCalendar .calendar-daysinweek div,
 .module.MMM-MonthCalendar .calendar-days div {
     padding: 4px 0;
+    margin: 0 8px;
 }
 
 .module.MMM-MonthCalendar .module-content { text-align: center; }
