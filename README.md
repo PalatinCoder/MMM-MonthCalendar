@@ -11,7 +11,7 @@ A monthly calendar for your [MagicMirror²](https://magicmirror.builders/).
 ## Installation
 
 1. Navigate into your MagicMirror `modules` folder and execute `git clone https://github.com/PalatinCoder/MMM-MonthCalendar.git`
-2. Enter the `MMM-MonthCalendar` directory and execute npm install
+2. Enter the `MMM-MonthCalendar` directory and execute `npm install`
 3. Navigate into the MagicMirror `config` folder and add the config below to the `config.js` file
 
 ## Configuration
@@ -35,3 +35,5 @@ There you can also add a custom text that prefixes your module's header (`header
     }
 }
 ```
+⚠️ *Regarding the module header*: The current month and year are automatically appended to the module header. But: MagicMirror only displays the header if one is set for the module in `config.js`. So, for the current month to be shown, you need to set a header which it can be appended to. If you omit the `header` property, the module won't have a header at all.
+If you don't want additional text in the header, that's no problem. As we all know: `"" !== undefined`, so just set your header to an empty string (as shown in the example above).
