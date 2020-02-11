@@ -1,6 +1,6 @@
 {
   "name": "mmm-monthcalendar",
-  "version": "0.0.1-alpha.1",
+  "version": "1.0.0",
   "private": true,
   "description": "Display a monthly calendar on your MagicMirror²",
   "main": "MMM-MonthCalendar.js",
